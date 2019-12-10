@@ -9,6 +9,7 @@ def sms_reply():
     # Start our TwiML response
     resp = MessagingResponse()
     
+    #when sharing location with Whatsapp, latitude (and longitude) will always be present. While Address may not be. That's why the distinction.
     
     if "Address" in request.values and "Latitude" in request.values:
         latitude = request.values.get('Latitude', None) 
